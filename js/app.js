@@ -17,8 +17,10 @@
  * Define Global Variables
  * 
 */
+const myNavList = document.getElementById("navbar__list");
+const main = document.getElementsByTagName("main")
 
-
+let mySections = [];
 /**
  * End Global Variables
  * Start Helper Functions
