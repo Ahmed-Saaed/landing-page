@@ -18,8 +18,10 @@
  * 
 */
 const myNavList = document.getElementById("navbar__list");
-let main = document.querySelector('MAIN').children;
-console.log (main[1].getAttribute("id"));
+let main = document.querySelector('MAIN');
+let sections = main.querySelectorAll('MAIN SECTION')
+
+console.log(typeof(sections))
 /**
  * End Global Variables
  * Start Helper Functions
@@ -36,18 +38,27 @@ console.log (main[1].getAttribute("id"));
 */
 
 // build the nav
-for (let i = 0 ; i < main.length-1 ;  i++) {
+for (let i = 0 ; i < sections.length ;  i++) {
   let navItem = document.createElement('li');
-  navItem.innerHTML = main[i+1].getAttribute('id');
+  navItem.innerHTML = sections[i].getAttribute('id');
   navLink = document.createElement("a")
-  navLink.setAttribute('href' , main[i+1].getAttribute('id'));
+  navLink.setAttribute('href' , '#'+sections[i].getAttribute('id'));
   navItem.appendChild(navLink)
   myNavList.appendChild(navItem)
-  console.log(navItem)
 }
-console.log(myNavList.children)
+let navItems = myNavList.children
+
+console.log(navItems)
 
 // Add class 'active' to section when near top of viewport
+
+for (let j = 0; j < main.length-1; j++){
+  if (main[j+1].getBoundingClientRect().top < 100) {
+    main.classList.remove("active")
+    main[j+1].classList.add("active")
+  }
+  console.log(main.classList)
+}
 
 
 // Scroll to anchor ID using scrollTO event
