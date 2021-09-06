@@ -21,7 +21,7 @@ const myNavList = document.getElementById("navbar__list");
 let main = document.querySelector('MAIN');
 let sections = main.querySelectorAll('MAIN SECTION')
 
-console.log(typeof(sections))
+console.log(sections)
 /**
  * End Global Variables
  * Start Helper Functions
@@ -52,15 +52,18 @@ console.log(navItems)
 
 // Add class 'active' to section when near top of viewport
 
-for (let j = 0; j < main.length-1; j++){
-  if (main[j+1].getBoundingClientRect().top < 100) {
-    main.classList.remove("active")
-    main[j+1].classList.add("active")
+const addActive = function(){
+for (const section of sections) {
+  if (section.classList.contains("active")) {
+      section.classList.remove("active");
   }
-  console.log(main.classList)
+};
+for (const section of sections) {
+  if (section.getBoundingClientRect().top < 100) {
+    section.classList.add("active");
+  }
+  }
 }
-
-
 // Scroll to anchor ID using scrollTO event
 
 
