@@ -18,15 +18,15 @@
  * 
 */
 const myNavList = document.getElementById("navbar__list");
-const main = document.getElementsByTagName("main")
-
-let mySections = [];
+let main = document.querySelector('MAIN').children;
+console.log (main[1].getAttribute("id"));
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
 
+// gettin the number of my sections 
 
 
 /**
@@ -36,7 +36,16 @@ let mySections = [];
 */
 
 // build the nav
-
+for (let i = 0 ; i < main.length-1 ;  i++) {
+  let navItem = document.createElement('li');
+  navItem.innerHTML = main[i+1].getAttribute('id');
+  navLink = document.createElement("a")
+  navLink.setAttribute('href' , main[i+1].getAttribute('id'));
+  navItem.appendChild(navLink)
+  myNavList.appendChild(navItem)
+  console.log(navItem)
+}
+console.log(myNavList.children)
 
 // Add class 'active' to section when near top of viewport
 
