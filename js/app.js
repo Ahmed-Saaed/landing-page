@@ -40,8 +40,8 @@ console.log(sections)
 // build the nav
 for (let i = 0 ; i < sections.length ;  i++) {
   let navItem = document.createElement('li');
-  navItem.innerHTML = sections[i].getAttribute('id');
   navLink = document.createElement("a")
+  navLink.innerHTML = sections[i].getAttribute('id');
   navLink.setAttribute('href' , '#'+sections[i].getAttribute('id'));
   navItem.appendChild(navLink)
   myNavList.appendChild(navItem)
@@ -65,7 +65,6 @@ for (const section of sections) {
   }
 }
 // Scroll to anchor ID using scrollTO event
-
 
 /**
  * End Main Functions

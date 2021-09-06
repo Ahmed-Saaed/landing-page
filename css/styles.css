@@ -9,6 +9,9 @@
 */
 
 /* ---- Base Rules ---- */
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: rgb(136, 203, 171);
   background: linear-gradient(
@@ -65,14 +68,43 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.navbar__menu {
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 0 rgba(11, 11, 11, 0.451);
+}
+
 .navbar__menu ul {
-  padding-left: 0;
-  margin: 0;
   text-align: right;
+  list-style: none;
+  padding-right: 20px;
+  z-index: 15;
 }
 
 .navbar__menu li {
   display: inline-block;
+  font-size: 20px;
+  margin: 5px 10px;
+}
+
+.navbar__menu li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar__menu li a:hover {
+  color: #303841;
 }
 
 .navbar__menu .menu__link {
