@@ -59,11 +59,13 @@ for (const section of sections) {
   }
 };
 for (const section of sections) {
-  if (section.getBoundingClientRect().top < 100) {
+  if (section.getBoundingClientRect().top < 50) {
     section.classList.add("active");
   }
   }
 }
+
+addActive()
 // Scroll to anchor ID using scrollTO event
 
 /**
