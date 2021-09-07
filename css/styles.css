@@ -94,6 +94,7 @@ section {
   display: inline-block;
   font-size: 20px;
   margin: 5px 10px;
+  transition: all 0.3;
 }
 
 .navbar__menu li a {
@@ -103,8 +104,11 @@ section {
   cursor: pointer;
 }
 
-.navbar__menu li a:hover {
-  color: #303841;
+.navbar__menu li:hover {
+  background-color: #303841;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 4px;
 }
 
 .navbar__menu .menu__link {

@@ -17,16 +17,17 @@
  * Define Global Variables
  * 
 */
-const myNavList = document.getElementById("navbar__list");
+const myNavList = document.getElementById('navbar__list');
 let main = document.querySelector('MAIN');
 let sections = main.querySelectorAll('MAIN SECTION')
 
 
 
 // build the nav
+
 for (let i = 0 ; i < sections.length ;  i++) {
   let navItem = document.createElement('li');
-  navLink = document.createElement("a")
+  navLink = document.createElement('a')
   navLink.innerHTML = sections[i].getAttribute('data-nav');
   navLink.setAttribute('href' , '#'+sections[i].getAttribute('id'));
   navItem.appendChild(navLink)
@@ -34,6 +35,7 @@ for (let i = 0 ; i < sections.length ;  i++) {
 }
 
 // get the anchors in array to use it in the event
+
 let navItems = myNavList.children;
 let navAnchors = [];
 
@@ -42,45 +44,33 @@ for (anchor of navItems) {
 }
 
 
-// Add class 'active' to section when near top of viewport
+// Add class 'active' to section and to the nav when near top of viewport
 
 let addActive = function(){
 for (const section of sections) {
-  if (section.classList.contains("active")) {
-      section.classList.remove("active");
+  if (section.classList.contains('active')) {
+      section.classList.remove('active');
   }
 }
 for (const section of sections) {
-  if (section.getBoundingClientRect().top > 1) {
-    section.classList.add("active");
+  if (section.getBoundingClientRect().top > -1) {
+    section.classList.add('active');
   }
   };
 };
 
-// Scroll to anchor ID using scrollTO event
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
+
+ // Begin Events
+
+
+// Add class 'active' to section when near top of viewport event 
+
 window.addEventListener('scroll' , addActive)
-// Build menu 
+
 // Set sections as active on click
+
 for (const anch of navAnchors){
-anch.addEventListener('click',function(){
-  for (const section of sections) {
-    if (section.classList.contains("active")) {
-        section.classList.remove("active");
-    }
-  }
-  for (const section of sections) {
-    if (section.getAttribute("data-nav") === anch.innerHTML) {
-      section.classList.add("active");
-    }
-    };
-})}
-
-
-
-
+anch.addEventListener('click', addActive
+)
+}
