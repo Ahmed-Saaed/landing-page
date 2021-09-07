@@ -45,7 +45,7 @@ let navAnchors = [];
 
 for (anchor of navItems) {
   navAnchors.push(anchor.children[0])
-}
+};
 
 
 // Add class 'active' to section and to the nav when near top of viewport
@@ -76,15 +76,24 @@ anch.addEventListener('click', addActive
 )
 }
 
+// to top button 
 window.onscroll = function(){
-  console.log
   if (sections[2].getBoundingClientRect().top < 1000 ){
     btn.style.display="block"
   }else{
     btn.style.display="none"
-  }
+  };
 }
 
 btn.addEventListener('click',function(){
   window.scrollTo (0 , 0)
+});
+
+// hide nav bar after scrolling
+
+window.addEventListener('scroll',function(event){
+  if((sections[0].getBoundingClientRect().top < 1000 ))
+  this.setTimeout(function(){
+    myNavList.style.display = "none"
+  },5000)
 })

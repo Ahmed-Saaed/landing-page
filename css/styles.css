@@ -273,7 +273,7 @@ section.active .landing__container::after {
   display: none;
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 30px;
   padding: 10px;
   border-radius: 50%;
   background-color: #94816f;
