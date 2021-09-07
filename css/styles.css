@@ -268,3 +268,17 @@ section.active .landing__container::after {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
 }
+
+#btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #94816f;
+  cursor: pointer;
+}
+#btn i {
+  color: rgba(255, 68, 0, 0.664);
+}

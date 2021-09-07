@@ -20,11 +20,12 @@
 const myNavList = document.getElementById('navbar__list');
 let main = document.querySelector('MAIN');
 let sections = main.querySelectorAll('MAIN SECTION')
+const btn = document.getElementById("btn")
 
 
 
 // build the nav
-
+function buildNav () {
 for (let i = 0 ; i < sections.length ;  i++) {
   let navItem = document.createElement('li');
   navLink = document.createElement('a')
@@ -33,6 +34,9 @@ for (let i = 0 ; i < sections.length ;  i++) {
   navItem.appendChild(navLink)
   myNavList.appendChild(navItem)
 }
+}
+
+buildNav ()
 
 // get the anchors in array to use it in the event
 
@@ -59,10 +63,7 @@ for (const section of sections) {
   };
 };
 
-
-
  // Begin Events
-
 
 // Add class 'active' to section when near top of viewport event 
 
@@ -74,3 +75,16 @@ for (const anch of navAnchors){
 anch.addEventListener('click', addActive
 )
 }
+
+window.onscroll = function(){
+  console.log
+  if (sections[2].getBoundingClientRect().top < 1000 ){
+    btn.style.display="block"
+  }else{
+    btn.style.display="none"
+  }
+}
+
+btn.addEventListener('click',function(){
+  window.scrollTo (0 , 0)
+})
