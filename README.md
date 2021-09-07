@@ -1,6 +1,6 @@
 # Landing Page Project
 
-building th functionality of the landing page
+building the functionality of the landing page
 
 ---
 
