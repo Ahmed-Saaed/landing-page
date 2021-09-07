@@ -17,6 +17,7 @@
  * Define Global Variables
  * 
 */
+const start = performance.now()
 const myNavList = document.getElementById('navbar__list');
 let main = document.querySelector('MAIN');
 let sections = main.querySelectorAll('MAIN SECTION')
@@ -89,11 +90,13 @@ btn.addEventListener('click',function(){
   window.scrollTo (0 , 0)
 });
 
-// hide nav bar after scrolling
+// hide the nav bar after scrolling
 
-window.addEventListener('scroll',function(event){
+window.addEventListener('scroll',function(){
   if((sections[0].getBoundingClientRect().top < 1000 ))
   this.setTimeout(function(){
     myNavList.style.display = "none"
   },5000)
 })
+
+const end = performance.now()
