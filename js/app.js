@@ -96,11 +96,11 @@ window.addEventListener('scroll',function(){
   if((sections[0].getBoundingClientRect().top < 1000 ))
   this.setTimeout(function(){
     myNavList.style.display = "none"
-  },5000)
+  },10000)
 
   this.setTimeout(function(){
     myNavList.style.display = "block"
-  },10000)
+  },5000)
 })
 
 
