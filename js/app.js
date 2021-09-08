@@ -97,6 +97,12 @@ window.addEventListener('scroll',function(){
   this.setTimeout(function(){
     myNavList.style.display = "none"
   },5000)
+
+  this.setTimeout(function(){
+    myNavList.style.display = "block"
+  },10000)
 })
+
+
 
 const end = performance.now()
