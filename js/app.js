@@ -20,22 +20,41 @@
 const start = performance.now()
 const myNavList = document.getElementById('navbar__list');
 let main = document.querySelector('MAIN');
-let sections = main.querySelectorAll('MAIN SECTION')
+let sections = main.querySelectorAll('MAIN SECTION');
 const btn = document.getElementById("btn")
 
+// Add section 
+function addSection(){
+  const newSec = document.createElement('section')
+  let container = document.createElement('div')
+  container.setAttribute('class','landing__container')
+  const header = document.createElement('h2');
+  const para1 = document.createElement('p');
+  para1.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+  fermentum metus faucibus lectus pharetra dapibus. Suspendisse
+  potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
+  lacinia ex. `
+  const para2 = document.createElement('p');
+  para2.innerHTML =`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+  fermentum metus faucibus lectus pharetra dapibus. Suspendisse
+  potenti. `
+  header.innerHTML = `Section ${sections.length+1}`
+  newSec.setAttribute('id',`section${sections.length+1}`);
+  newSec.setAttribute('data-nav',`Section ${sections.length+1}`);
+  newSec.appendChild(container);
+  container.appendChild(header);
+  container.appendChild(para1);
+  container.appendChild(para2)
+  main.appendChild(newSec)
+}
 
+addSection();
+sections = main.querySelectorAll('MAIN SECTION');
+
+console.log(sections)
 
 // build the nav
-/** function buildNav () {
-for (let i = 0 ; i < sections.length ;  i++) {
-  let navItem = document.createElement('li');
-  navLink = document.createElement('a')
-  navLink.innerHTML = sections[i].getAttribute('data-nav');
-  navLink.setAttribute('href' , '#'+sections[i].getAttribute('id'));
-  navItem.appendChild(navLink)
-  myNavList.appendChild(navItem)
-} 
-}*/
+
 function buildNav(){
   let temp = document.createDocumentFragment();
   sections.forEach(item => {
