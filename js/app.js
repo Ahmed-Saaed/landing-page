@@ -37,7 +37,7 @@ for (let i = 0 ; i < sections.length ;  i++) {
 } 
 }*/
 
-function buildNav () {
+(function buildNav () {
   sections.forEach(item => {
     let navItem = document.createElement('li');
     navLink = document.createElement('a')
@@ -46,10 +46,7 @@ function buildNav () {
     navItem.appendChild(navLink)
     myNavList.appendChild(navItem)
   });
-}
-
-
-buildNav ()
+}())
 
 // get the anchors in array to use it in the event
 
