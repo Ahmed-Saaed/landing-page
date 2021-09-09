@@ -93,7 +93,7 @@ for (const section of sections) {
   if (rect.top >= 0 && rect.left >= 0 && rect.bottom / 1.5 <= (window.outerHeight ||client.outerHeight ) &&rect.right <= window.innerWidth ) {
 
     section.classList.add('active');
-  }else {console.log( section.firstChild) }
+  }
   };
 };
 
