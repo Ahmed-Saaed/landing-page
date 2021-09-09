@@ -26,7 +26,7 @@ const btn = document.getElementById("btn")
 
 
 // build the nav
-function buildNav () {
+/** function buildNav () {
 for (let i = 0 ; i < sections.length ;  i++) {
   let navItem = document.createElement('li');
   navLink = document.createElement('a')
@@ -34,8 +34,20 @@ for (let i = 0 ; i < sections.length ;  i++) {
   navLink.setAttribute('href' , '#'+sections[i].getAttribute('id'));
   navItem.appendChild(navLink)
   myNavList.appendChild(navItem)
+} 
+}*/
+
+function buildNav () {
+  sections.forEach(item => {
+    let navItem = document.createElement('li');
+    navLink = document.createElement('a')
+    navLink.innerHTML = item.getAttribute('data-nav');
+    navLink.setAttribute('href' , '#'+ item.getAttribute('id'));
+    navItem.appendChild(navLink)
+    myNavList.appendChild(navItem)
+  });
 }
-}
+
 
 buildNav ()
 
@@ -92,16 +104,16 @@ btn.addEventListener('click',function(){
 
 // hide the nav bar after scrolling
 
-window.addEventListener('scroll',function(){
+/** window.addEventListener('scroll',function(){
   if((sections[0].getBoundingClientRect().top < 1000 ))
   this.setTimeout(function(){
     myNavList.style.display = "none"
   },5000)
 
-  this.setTimeout(function(){
+  this.clearTimeout(function(){
     myNavList.style.display = "block"
   },10000)
-})
+}) */
 
 
 
