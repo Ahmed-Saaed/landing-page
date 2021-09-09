@@ -83,17 +83,20 @@ for (anchor of navItems) {
 // Add class 'active' to section and to the nav when near top of viewport
 
 let addActive = function(){
-for (const section of sections) {
-  if (section.classList.contains('active')) {
-      section.classList.remove('active');
+  for (const section of sections) {
+    if (section.classList.contains('active')) {
+        section.classList.remove('active');
+    }
   }
-}
 for (const section of sections) {
-  if (section.getBoundingClientRect().top > -1) {
+  let rect = section.firstElementChild.getBoundingClientRect()
+  if (rect.top >= 0 && rect.left >= 0 && rect.bottom / 1.5 <= (window.outerHeight ||client.outerHeight ) &&rect.right <= window.innerWidth ) {
+
     section.classList.add('active');
-  }
+  }else {console.log( section.firstChild) }
   };
 };
+
 
  // Begin Events
 

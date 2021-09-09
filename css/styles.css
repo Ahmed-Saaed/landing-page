@@ -97,6 +97,13 @@ section {
   transition: all 0.3;
 }
 
+@media (max-width: 376px) {
+  .navbar__menu li {
+    font-size: 12px;
+    margin: 2px;
+  }
+}
+
 .navbar__menu li a {
   display: block;
   text-decoration: none;
