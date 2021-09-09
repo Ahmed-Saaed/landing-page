@@ -36,17 +36,21 @@ for (let i = 0 ; i < sections.length ;  i++) {
   myNavList.appendChild(navItem)
 } 
 }*/
-
-(function buildNav () {
+function buildNav(){
+  let temp = document.createDocumentFragment();
   sections.forEach(item => {
     let navItem = document.createElement('li');
-    navLink = document.createElement('a')
+    navLink = document.createElement('a');
     navLink.innerHTML = item.getAttribute('data-nav');
     navLink.setAttribute('href' , '#'+ item.getAttribute('id'));
-    navItem.appendChild(navLink)
-    myNavList.appendChild(navItem)
+    navItem.appendChild(navLink);
+    temp.appendChild(navItem);
   });
-}())
+  myNavList.appendChild(temp)
+}
+
+buildNav();
+
 
 // get the anchors in array to use it in the event
 
@@ -87,7 +91,7 @@ anch.addEventListener('click', addActive
 }
 
 // to top button 
-window.onscroll = function(){
+window.onscroll = () => {
   if (sections[2].getBoundingClientRect().top < 1000 ){
     btn.style.display="block"
   }else{
@@ -95,9 +99,7 @@ window.onscroll = function(){
   };
 }
 
-btn.addEventListener('click',function(){
-  window.scrollTo (0 , 0)
-});
+btn.addEventListener('click',()=>{window.scrollTo (0 , 0)});
 
 // hide the nav bar after scrolling
 
