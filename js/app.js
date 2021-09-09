@@ -49,9 +49,8 @@ function addSection(){
 }
 
 addSection();
-sections = main.querySelectorAll('MAIN SECTION');
 
-console.log(sections)
+sections = main.querySelectorAll('MAIN SECTION');
 
 // build the nav
 
@@ -97,6 +96,19 @@ for (const section of sections) {
 };
 
  // Begin Events
+
+// scroll to anchor section on click on the nav tab with the same Id
+
+for (anchor of navAnchors) {
+  anchor.addEventListener('click', function(event){
+    event.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+    });
+  });
+}
+
+
 
 // Add class 'active' to section when near top of viewport event 
 
